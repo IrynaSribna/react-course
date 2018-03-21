@@ -23,18 +23,23 @@ class App extends Component {
       cursor: 'pointer',
       margin: '20px'
     }
+
+    let persons = null;
+    
+    if (this.state.showPersons) {
+        persons = (
+          <div>
+              <Person name="Eric" age="2"/>
+              <Person name={this.state.userName} age="21"/>
+            </div>
+        );
+    }
     return (
       <div className="App">
         <button style={style}
           onClick={this.togglePersonsHandler}>Toggle Persons
         </button> 
-        {
-          this.state.showPersons === true ?
-            <div>
-              <Person name="Eric" age="2"/>
-              <Person name={this.state.userName} age="21"/>
-            </div> : null 
-        }   
+        {persons}   
       </div>
     );
   }
