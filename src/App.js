@@ -14,14 +14,23 @@ class App extends Component {
     this.setState({showPersons: !doesShow})
   }
   render() {
+    const style = {
+      backgroundColor: 'blue',
+      color: 'white',
+      font: 'inherit',
+      border: '1px solid magenta',
+      padding: '8px',
+      cursor: 'pointer',
+      margin: '20px'
+    }
     return (
       <div className="App">
-        <button 
+        <button style={style}
           onClick={this.togglePersonsHandler}>Toggle Persons
         </button> 
         {
           this.state.showPersons === true ?
-            <div>ß
+            <div>
               <Person name="Eric" age="2"/>
               <Person name={this.state.userName} age="21"/>
             </div> : null 
