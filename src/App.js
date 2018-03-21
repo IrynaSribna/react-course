@@ -5,6 +5,11 @@ import Person from'./Person/Person'
 
 class App extends Component {
   state = {
+    persons: [
+      {name: 'Eric', age: '2'},
+      {name: 'Lila', age: '23'},
+      {name: 'Tom',  age : '45'}
+    ],
     userName: 'Tom',
     showPersons: false
   }
@@ -29,9 +34,12 @@ class App extends Component {
     if (this.state.showPersons) {
         persons = (
           <div>
-              <Person name="Eric" age="2"/>
-              <Person name={this.state.userName} age="21"/>
-            </div>
+            {this.state.persons.map(person => {
+              return <Person
+                name={person.name}
+                age={person.age} />
+            })}
+          </div>
         );
     }
     return (
