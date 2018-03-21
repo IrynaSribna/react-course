@@ -14,6 +14,25 @@ class App extends Component {
     showPersons: false
   }
 
+  changeNameHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex(p => {
+      return p.id === id
+    });
+
+    //make a copy in order not to manipulate the state directly:
+    const personToUpdate = {
+      ...this.state.persons[personIndex]
+    };
+
+    personToUpdate.name = event.target.value;
+
+    const updatedPersons = [...this.state.persons];
+    
+    updatedPersons[personIndex] = personToUpdate
+
+    this.setState({persons: updatedPersons});
+  }
+
   deletePersonHandler = (personIndex) => {
     //const persons = this.state.persons; //this mutates the array we need to create a copy of array
     // 1st option:
@@ -49,7 +68,8 @@ class App extends Component {
                 click={() => this.deletePersonHandler(index)}
                 name={person.name}
                 age={person.age} 
-                key={person.id}/>
+                key={person.id}
+                changed={(event) => this.changeNameHandler(event, person.id)}/>
             })}
           </div>
         );

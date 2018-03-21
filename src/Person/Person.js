@@ -3,9 +3,10 @@ import './Person.css'
 
 const person = (props) => {
     return(
-        <div className="Person" onClick={props.click}>
-            <p>User name: {props.name}</p>
+        <div className="Person">
+            <p onClick={props.click}>User name: {props.name}</p>
             <p>User age: {props.age}</p>
+            <input onChange={props.changed} value={props.name}/>
         </div> 
     )   
 }
