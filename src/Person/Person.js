@@ -3,7 +3,7 @@ import './Person.css'
 
 const person = (props) => {
     return(
-        <div className="Person">
+        <div className="Person" onClick={props.click}>
             <p>User name: {props.name}</p>
             <p>User age: {props.age}</p>
         </div> 
