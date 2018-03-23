@@ -1,7 +1,8 @@
-import React from 'react'
-import './Person.css'
+import React from 'react';
+import './Person.css';
 
 const person = (props) => {
+    
     return(
         <div className="Person">
             <p onClick={props.click}>User name: {props.name}</p>
