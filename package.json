@@ -3,20 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "0.9.5"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
-}
-=======
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -106,4 +92,3 @@
     "extends": "react-app"
   }
 }
->>>>>>> c79b317dd4550b576c5d2d8dfd4a9dd832edc2e0
