@@ -1,8 +1,17 @@
 .Person {
+<<<<<<< HEAD
     width: 60%;
     margin: 16px auto;
     border: 2px solid lightcoral;
     box-shadow: lightgrey;
     padding: 16px;
     text-align: center
+=======
+    width: 30%;
+    border: 2px solid rgb(91, 130, 214);
+    background-color: rgb(232, 236, 241);
+    padding: 2px;
+    margin: 20px;
+    text-align: center;
+>>>>>>> c79b317dd4550b576c5d2d8dfd4a9dd832edc2e0
 }
