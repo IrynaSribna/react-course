@@ -11,7 +11,7 @@ class App extends Component {
     ],
     userName: 'Tom',
     showPersons: false
-  }
+  };
 
   changeNameHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
@@ -30,7 +30,7 @@ class App extends Component {
     updatedPersons[personIndex] = personToUpdate
 
     this.setState({persons: updatedPersons});
-  }
+  };
 
   deletePersonHandler = (personIndex) => {
     //const persons = this.state.persons; //this mutates the array we need to create a copy of array
@@ -40,24 +40,16 @@ class App extends Component {
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1); //delete 1 element with index=personIndex
     this.setState({persons: persons})
-  }
+  };
 
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
     this.setState({showPersons: !doesShow})
-  }
-  render() {
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid magenta',
-      padding: '8px',
-      cursor: 'pointer',
-      margin: '20px'
-    }
+  };
 
+  render() {
     let persons = null;
+    let btnStyle = '';
     
     if (this.state.showPersons) {
         persons = (
@@ -72,8 +64,7 @@ class App extends Component {
             })}
           </div>
         );
-
-        style.backgroundColor = 'red';
+        btnStyle = styleClasses.Red
     }
 
     let assignedClasses = [];
@@ -89,7 +80,8 @@ class App extends Component {
     return (
       <div className={styleClasses.App}>
       <p className={assignedClasses.join(' ')}>Show persons</p>
-        <button style={style}
+        <button 
+          className={btnStyle}
           onClick={this.togglePersonsHandler}>Toggle Persons
         </button> 
         {persons}   
