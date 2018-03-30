@@ -16,7 +16,7 @@ class App extends Component {
 
   changeNameHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
-      return p.id === id
+      return p.userId === id
     });
 
     //make a copy in order not to manipulate the state directly:
@@ -61,7 +61,9 @@ class App extends Component {
 
     return (
       <div className={styleClasses.App}>
-        <Cockpit persons={this.state.persons}
+        <Cockpit 
+          appTitle = {this.props.title}
+          persons={this.state.persons}
           showPersons={this.state.showPersons}
           clicked={this.togglePersonsHandler}/> 
         {persons}   

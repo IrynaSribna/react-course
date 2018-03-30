@@ -21,10 +21,11 @@ const cockpit = (props) => {
 
     return(
         <div className={styleClasses.Cockpit}>
+            <h1>{props.appTitle}</h1>
             <p className={assignedClasses.join(' ')}>Show persons</p>
                 <button 
-                className={btnStyle}
-                onClick={props.clicked}>Toggle Persons
+                    className={btnStyle}
+                    onClick={props.clicked}>Toggle Persons
                 </button>
         </div>    
     );    
