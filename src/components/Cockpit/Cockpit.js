@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styleClasses from './Cockpit.css';
-import Aux from '../hoc/Aux';
+import Aux from '../../hoc/Aux';
 
 const cockpit = (props) => {
     let btnStyle = styleClasses.Button;
