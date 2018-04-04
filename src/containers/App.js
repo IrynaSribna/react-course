@@ -9,6 +9,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     console.log('[App.js] inside constructor', props);
+
+    this.state = {
+      persons: [
+        {id: '1',   name: 'Eric', age: '2'},
+        {id: '2ss', name: 'Lila', age: '23'},
+        {id: '3dd', name: 'Tom',  age : '45'}
+      ],
+      userName: 'Tom',
+      showPersons: false
+    };
   }
 
   componentWillMount() {
@@ -32,15 +42,15 @@ class App extends Component {
     console.log('[UPDATE App.js] inside componentDidUpdate()');
   }
 
-  state = {
-    persons: [
-      {id: '1',   name: 'Eric', age: '2'},
-      {id: '2ss', name: 'Lila', age: '23'},
-      {id: '3dd', name: 'Tom',  age : '45'}
-    ],
-    userName: 'Tom',
-    showPersons: false
-  };
+  // state = {
+  //   persons: [
+  //     {id: '1',   name: 'Eric', age: '2'},
+  //     {id: '2ss', name: 'Lila', age: '23'},
+  //     {id: '3dd', name: 'Tom',  age : '45'}
+  //   ],
+  //   userName: 'Tom',
+  //   showPersons: false
+  // };
 
   changeNameHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
