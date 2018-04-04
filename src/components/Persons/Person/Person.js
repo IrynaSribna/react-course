@@ -16,6 +16,10 @@ class Person extends Component {
     
     componentDidMount() {
         console.log('[Person.js] inside componentDidMount()');
+
+        if (this.props.position === 0) { //without this check the last element will be focused
+            this.inputElementRef.focus();
+        }
     }
     
     render() {
@@ -24,7 +28,12 @@ class Person extends Component {
             <Aux>
                 <p onClick={this.props.click}>User name: {this.props.name}</p>
                 <p>User age: {this.props.age}</p>
-                <input onChange={this.props.changed} value={this.props.name}/>
+                <input 
+                    ref = {( inp ) => {this.inputElementRef = inp }} //this.inputElementRef is a custom name for our reference to the input.
+                    //ref is available only in Stateful components
+                    type = "text"
+                    onChange={this.props.changed} 
+                    value={this.props.name}/>
             </Aux> 
         )    
     }
