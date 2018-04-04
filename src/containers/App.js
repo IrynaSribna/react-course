@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import styleClasses from './App.css';
 import Persons from'../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
@@ -12,9 +13,9 @@ class App extends Component {
 
     this.state = {
       persons: [
-        {id: '1',   name: 'Eric', age: '2'},
-        {id: '2ss', name: 'Lila', age: '23'},
-        {id: '3dd', name: 'Tom',  age : '45'}
+        {id: '1',   name: 'Eric', age: 2},
+        {id: '2ss', name: 'Lila', age: 23},
+        {id: '3dd', name: 'Tom',  age : 45}
       ],
       userName: 'Tom',
       showPersons: false,
